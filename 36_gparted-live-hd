@@ -1,0 +1,11 @@
+#!/bin/sh
+exec tail -n +3 $0
+# Gparted live
+# menuentry adapted from https://gparted.org/livehd.php
+
+menuentry "Gparted live" {
+  loopback loop "$prefix/../gparted-live.iso"
+  linux (loop)/live/vmlinuz boot=live config union=overlay username=user components noswap noeject vga=788 ip= net.ifnames=0 toram=filesystem.squashfs findiso=/gparted-live.iso
+  initrd (loop)/live/initrd.img
+}
+

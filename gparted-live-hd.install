@@ -1,0 +1,7 @@
+post_install() {
+  echo ":: gparted-live-hd-bin has been installed. You might need to regenerate your grub configuration to make gparted appear in your grub menu."
+}
+
+post_remove() {
+  echo ":: gparted-live-hd-bin has been removed. You might need to regenerate your grub configuration to make gparted disappear in your grub menu."
+}
